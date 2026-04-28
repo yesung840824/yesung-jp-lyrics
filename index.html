@@ -583,7 +583,7 @@ const tracks = [
       {t:34,  ja:'<ruby>眠<rt>ねむ</rt></ruby>れない<ruby>日々<rt>ひび</rt></ruby>',romaji:'nemurenai hibi',kuudoku:'捏姆雷奈 hi比',zh:'無法入睡的日子'},
       {t:39,  ja:'そうやって<ruby>僕<rt>ぼく</rt></ruby>は<ruby>生<rt>い</rt></ruby>きてく',romaji:'sou yatte boku wa ikiteku',kuudoku:'搜亞爹 伯庫哇 伊ki 爹 哭',zh:'就那樣我繼續活下去'},
       {t:43,  ja:'「<ruby>幸<rt>しあわ</rt></ruby>せ」は<ruby>目<rt>め</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>で',romaji:'shiawase wa me no mae de',kuudoku:'西阿哇賽 哇 咩諾馬欸爹',zh:'「幸福」就在眼前'},
-      {t:47,  ja:'<ruby>儚<rt>はかな</rt></ruby>く<ruby>揺<rt>ゆ</rt></ruby>れる<ruby>灯<rt>ひ</rt></ruby>',romaji:'hakanaku yureru hi',kuudoku:'哈卡那庫 由雷魯 hi',zh:'卻如搖曳的微光般脆弱'},
+      {t:47,  ja:'<ruby>儚<rt>はかな</rt></ruby>く<ruby>揺<rt>ゆ</rt></ruby>れる<ruby>灯<rt>ともしび</rt></ruby>',romaji:'hakanaku yureru tomosibi',kuudoku:'哈卡那庫 由雷魯 都某西比',zh:'卻如搖曳的微光般脆弱'},
       {t:51,  ja:'<ruby>夜明<rt>よあ</rt></ruby>けのよう invincible',romaji:'yoake no you invincible',kuudoku:'喲阿給諾唷 invincible',zh:'如黎明般 invincible'},
       {t:60,  ja:'Invincible',romaji:'Invincible',kuudoku:'Invincible',zh:'invincible'},
       {t:64,  ja:'<ruby>生<rt>い</rt></ruby>きていくんだ',romaji:'ikite ikun da',kuudoku:'伊ki 爹 伊昆達',zh:'繼續活下去'},
@@ -596,7 +596,7 @@ const tracks = [
       {t:95,  ja:'<ruby>耐<rt>た</rt></ruby>え<ruby>抜<rt>ぬ</rt></ruby>く<ruby>術<rt>すべ</rt></ruby>を',romaji:'taenuku sube o',kuudoku:'他欸奴庫 蘇貝喔',zh:'堅持下去的方法'},
       {t:100, ja:'そうやって<ruby>僕<rt>ぼく</rt></ruby>は<ruby>生<rt>い</rt></ruby>きてく',romaji:'sou yatte boku wa ikiteku',kuudoku:'搜亞爹 伯庫哇 伊ki 爹 哭',zh:'就這樣我繼續地活著'},
       {t:104, ja:'「<ruby>幸<rt>しあわ</rt></ruby>せ」は<ruby>目<rt>め</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>で',romaji:'shiawase wa me no mae de',kuudoku:'西阿哇賽 哇 咩諾馬欸爹',zh:'「幸福」就在眼前'},
-      {t:108, ja:'<ruby>儚<rt>はかな</rt></ruby>く<ruby>揺<rt>ゆ</rt></ruby>れる<ruby>灯<rt>ひ</rt></ruby>',romaji:'hakanaku yureru hi',kuudoku:'哈卡那庫 由雷魯 hi',zh:'卻依然搖曳不定'},
+      {t:108, ja:'<ruby>儚<rt>はかな</rt></ruby>く<ruby>揺<rt>ゆ</rt></ruby>れる<ruby>灯<rt>ともしび</rt></ruby>',romaji:'hakanaku yureru tomosibi',kuudoku:'哈卡那庫 由雷魯 都某西比',zh:'卻依然搖曳不定'},
       {t:112, ja:'<ruby>夜明<rt>よあ</rt></ruby>けのよう invincible',romaji:'yoake no you invincible',kuudoku:'喲阿給諾唷 invincible',zh:'如黎明般invincible'},
       {t:118, ja:'Ayy, ayy, ayy, invincible',romaji:'ayy, ayy, ayy, invincible',kuudoku:'Ayy, ayy, ayy, invincible',zh:'invincible'},
       {t:126, ja:'<ruby>生<rt>い</rt></ruby>きていくんだ',romaji:'ikite ikun da',kuudoku:'伊ki 爹 伊昆達',zh:'繼續活下去'},
@@ -1102,6 +1102,11 @@ function loadTrack(idx) {
   const tr = tracks[idx];
   document.querySelectorAll('.track-item').forEach((el, i) => el.classList.toggle('active', i === idx));
   document.getElementById('headerTrackNo').textContent = `Track ${tr.no}`;
+  document.documentElement.style.scrollBehavior = 'auto';
+  document.body.style.scrollBehavior = 'auto';
+  window.scrollTo(0, 0);
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
   document.getElementById('headerTitle').textContent = tr.titleJa;
   document.getElementById('headerSub').textContent = tr.titleZh;
   duration = 0;
